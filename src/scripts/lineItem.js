@@ -765,6 +765,9 @@ const CUSTOMER_AND_SELECTOR = {
     customer_qualifier_1: [...CUSTOMER_QUALIFIERS],
     and_customer_qualifier_2: [...CUSTOMER_QUALIFIERS],
     and_customer_qualifier_3: [...CUSTOMER_QUALIFIERS],
+    and_customer_qualifier_4: [...CUSTOMER_QUALIFIERS],
+    and_customer_qualifier_5: [...CUSTOMER_QUALIFIERS],
+    and_customer_qualifier_6: [...CUSTOMER_QUALIFIERS]
   }
 };
 
@@ -775,7 +778,10 @@ const CUSTOMER_OR_SELECTOR = {
   inputs: {
     customer_qualifier_1: [...CUSTOMER_QUALIFIERS],
     or_customer_qualifier_2: [...CUSTOMER_QUALIFIERS],
-    or_customer_qualifier_3: [...CUSTOMER_QUALIFIERS]
+    or_customer_qualifier_3: [...CUSTOMER_QUALIFIERS],
+    or_customer_qualifier_4: [...CUSTOMER_QUALIFIERS],
+    or_customer_qualifier_5: [...CUSTOMER_QUALIFIERS],
+    or_customer_qualifier_6: [...CUSTOMER_QUALIFIERS]
   }
 };
 
@@ -787,6 +793,9 @@ const LINE_ITEM_AND_SELECTOR = {
     line_item_selector_1: [...LINE_ITEM_SELECTORS],
     and_line_item_selector_2: [...LINE_ITEM_SELECTORS],
     and_line_item_selector_3: [...LINE_ITEM_SELECTORS],
+    and_line_item_selector_4: [...LINE_ITEM_SELECTORS],
+    and_line_item_selector_5: [...LINE_ITEM_SELECTORS],
+    and_line_item_selector_6: [...LINE_ITEM_SELECTORS]
   }
 };
 
@@ -797,7 +806,10 @@ const LINE_ITEM_OR_SELECTOR = {
   inputs: {
     line_item_selector_1: [...LINE_ITEM_SELECTORS],
     or_line_item_selector_2: [...LINE_ITEM_SELECTORS],
-    or_line_item_selector_3: [...LINE_ITEM_SELECTORS]
+    or_line_item_selector_3: [...LINE_ITEM_SELECTORS],
+    or_line_item_selector_4: [...LINE_ITEM_SELECTORS],
+    or_line_item_selector_5: [...LINE_ITEM_SELECTORS],
+    or_line_item_selector_6: [...LINE_ITEM_SELECTORS]
   }
 };
 
@@ -808,7 +820,10 @@ const CART_OR_SELECTOR = {
   inputs: {
     cart_qualifier_1: [...CART_QUALIFIERS],
     or_cart_qualifier_2: [...CART_QUALIFIERS],
-    or_cart_qualifier_3: [...CART_QUALIFIERS]
+    or_cart_qualifier_3: [...CART_QUALIFIERS],
+    or_cart_qualifier_4: [...CART_QUALIFIERS],
+    or_cart_qualifier_5: [...CART_QUALIFIERS],
+    or_cart_qualifier_6: [...CART_QUALIFIERS]
   }
 };
 
@@ -819,7 +834,10 @@ const CART_AND_SELECTOR = {
   inputs: {
     cart_qualifier_1: [...CART_QUALIFIERS],
     and_cart_qualifier_2: [...CART_QUALIFIERS],
-    and_cart_qualifier_3: [...CART_QUALIFIERS]
+    and_cart_qualifier_3: [...CART_QUALIFIERS],
+    and_cart_qualifier_4: [...CART_QUALIFIERS],
+    and_cart_qualifier_5: [...CART_QUALIFIERS],
+    and_cart_qualifier_6: [...CART_QUALIFIERS]
   }
 };
 

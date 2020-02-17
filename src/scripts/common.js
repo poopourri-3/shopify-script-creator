@@ -247,7 +247,7 @@ class CustomerOrderCountQualifier < Qualifier
   end
 
   def match?(cart, selector = nil)
-    return false if cart.customer.nil?
+    return true if cart.customer.nil?
     total = cart.customer.orders_count
     compare_amounts(total, @comparison_type, @amount)
   end
