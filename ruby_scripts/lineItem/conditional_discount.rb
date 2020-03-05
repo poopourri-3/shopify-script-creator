@@ -14,9 +14,9 @@ class ConditionalDiscount < Campaign
     applicable_items.each do |item|
       break if @items_to_discount == 0
       if (!@items_to_discount.nil? && item.quantity > @items_to_discount)
-        discounted_items = item.split(take: @items_to_discount)
-        @discount.apply(discounted_items)
-        cart.line_items << discounted_items
+        new_items = item.split(take: item.quantity - @items_to_discount)
+        @discount.apply(item)
+        cart.line_items << new_items
         @items_to_discount = 0
       else
         @discount.apply(item)
