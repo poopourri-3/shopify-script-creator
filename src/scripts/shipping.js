@@ -459,6 +459,10 @@ const CUSTOMER_AND_SELECTOR = {
     line_item_qualifier_1: [...CUSTOMER_QUALIFIERS],
     and_line_item_qualifier_2: [...CUSTOMER_QUALIFIERS],
     and_line_item_qualifier_3: [...CUSTOMER_QUALIFIERS],
+    and_line_item_qualifier_4: [...CUSTOMER_QUALIFIERS],
+    and_line_item_qualifier_5: [...CUSTOMER_QUALIFIERS],
+    and_line_item_qualifier_6: [...CUSTOMER_QUALIFIERS],
+    and_line_item_qualifier_7: [...CUSTOMER_QUALIFIERS],
   }
 };
 
@@ -469,7 +473,11 @@ const CUSTOMER_OR_SELECTOR = {
   inputs: {
     line_item_qualifier_1: [...CUSTOMER_QUALIFIERS],
     or_line_item_qualifier_2: [...CUSTOMER_QUALIFIERS],
-    or_line_item_qualifier_3: [...CUSTOMER_QUALIFIERS]
+    or_line_item_qualifier_3: [...CUSTOMER_QUALIFIERS],
+    or_line_item_qualifier_4: [...CUSTOMER_QUALIFIERS],
+    or_line_item_qualifier_5: [...CUSTOMER_QUALIFIERS],
+    or_line_item_qualifier_6: [...CUSTOMER_QUALIFIERS],
+    or_line_item_qualifier_7: [...CUSTOMER_QUALIFIERS],
   }
 };
 
@@ -481,6 +489,10 @@ const LINE_ITEM_AND_SELECTOR = {
     line_item_qualifier_1: [...LINE_ITEM_QUALIFIERS],
     and_line_item_qualifier_2: [...LINE_ITEM_QUALIFIERS],
     and_line_item_qualifier_3: [...LINE_ITEM_QUALIFIERS],
+    and_line_item_qualifier_4: [...LINE_ITEM_QUALIFIERS],
+    and_line_item_qualifier_5: [...LINE_ITEM_QUALIFIERS],
+    and_line_item_qualifier_6: [...LINE_ITEM_QUALIFIERS],
+    and_line_item_qualifier_7: [...LINE_ITEM_QUALIFIERS],
   }
 };
 
@@ -491,7 +503,11 @@ const LINE_ITEM_OR_SELECTOR = {
   inputs: {
     line_item_qualifier_1: [...LINE_ITEM_QUALIFIERS],
     or_line_item_qualifier_2: [...LINE_ITEM_QUALIFIERS],
-    or_line_item_qualifier_3: [...LINE_ITEM_QUALIFIERS]
+    or_line_item_qualifier_3: [...LINE_ITEM_QUALIFIERS],
+    or_line_item_qualifier_4: [...LINE_ITEM_QUALIFIERS],
+    or_line_item_qualifier_5: [...LINE_ITEM_QUALIFIERS],
+    or_line_item_qualifier_6: [...LINE_ITEM_QUALIFIERS],
+    or_line_item_qualifier_7: [...LINE_ITEM_QUALIFIERS],
   }
 };
 
@@ -502,7 +518,11 @@ const CART_OR_SELECTOR = {
   inputs: {
     cart_qualifier_1: [...CART_QUALIFIERS],
     or_cart_qualifier_2: [...CART_QUALIFIERS],
-    or_cart_qualifier_3: [...CART_QUALIFIERS]
+    or_cart_qualifier_3: [...CART_QUALIFIERS],
+    or_cart_qualifier_4: [...CART_QUALIFIERS],
+    or_cart_qualifier_5: [...CART_QUALIFIERS],
+    or_cart_qualifier_6: [...CART_QUALIFIERS],
+    or_cart_qualifier_7: [...CART_QUALIFIERS],
   }
 };
 
@@ -513,7 +533,11 @@ const CART_AND_SELECTOR = {
   inputs: {
     cart_qualifier_1: [...CART_QUALIFIERS],
     and_cart_qualifier_2: [...CART_QUALIFIERS],
-    and_cart_qualifier_3: [...CART_QUALIFIERS]
+    and_cart_qualifier_3: [...CART_QUALIFIERS],
+    and_cart_qualifier_4: [...CART_QUALIFIERS],
+    and_cart_qualifier_5: [...CART_QUALIFIERS],
+    and_cart_qualifier_6: [...CART_QUALIFIERS],
+    and_cart_qualifier_7: [...CART_QUALIFIERS],
   }
 };
 
@@ -525,6 +549,10 @@ const RATE_AND_SELECTOR = {
     rate_selector_1: [...RATE_SELECTORS],
     and_rate_selector_2: [...RATE_SELECTORS],
     and_rate_selector_3: [...RATE_SELECTORS],
+    and_rate_selector_4: [...RATE_SELECTORS],
+    and_rate_selector_5: [...RATE_SELECTORS],
+    and_rate_selector_6: [...RATE_SELECTORS],
+    and_rate_selector_7: [...RATE_SELECTORS],
   }
 };
 
@@ -535,7 +563,11 @@ const RATE_OR_SELECTOR = {
   inputs: {
     rate_selector_1: [...RATE_SELECTORS],
     or_rate_selector_2: [...RATE_SELECTORS],
-    or_rate_selector_3: [...RATE_SELECTORS]
+    or_rate_selector_3: [...RATE_SELECTORS],
+    or_rate_selector_4: [...RATE_SELECTORS],
+    or_rate_selector_5: [...RATE_SELECTORS],
+    or_rate_selector_6: [...RATE_SELECTORS],
+    or_rate_selector_7: [...RATE_SELECTORS],
   }
 };
 
