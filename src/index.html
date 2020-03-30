@@ -7,42 +7,10 @@
   <meta name="description" content="A web application to quickly and easily build and generate Shopify scripts. No coding required!">
   <meta name="author" content="Jason Godson">
   <title>Shopify Script Creator</title>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-85041190-3"></script>
   <!-- Polyfills for older browsers -->
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
 
-  <script>
-    // Prevent analytics errors and allows debugging on localhost
-    var events = undefined;
-    var interactions = undefined;
-    var gtag = undefined;
-    var dataLayer = undefined;
 
-    if (location.hostname !== "localhost") {
-      // Load Google Analytics
-      dataLayer = dataLayer || [];
-      gtag = function() { dataLayer.push(arguments); };
-      gtag('js', new Date());
-      gtag('config', 'UA-85041190-3');
-    } else {
-      events = [];
-      interactions = {};
-      gtag = function (type, action, params) {
-        if (interactions[action]) {
-          interactions[action]++;
-        } else {
-          interactions[action] = 1;
-        }
-        events.push({
-          type: type,
-          action: action,
-          params: params || null
-        });
-      };
-    }
-  </script>
 </head>
 <body>
   <div id="root"></div>

@@ -18,10 +18,10 @@ export default class ScriptOutput extends Component {
 
   copyOutputCode() {
     // Google Analytics
-    gtag('event', 'copyButtonClick', {
-      value: this.props.output.length,
-      minificationLevel: this.state.minificationLevel
-    });
+    //gtag('event', 'copyButtonClick', {
+    //   value: this.props.output.length,
+    //   minificationLevel: this.state.minificationLevel
+    // });
 
     // Can't use ref with newer versions of Polaris, so this is a bit of a hack
     const textField = document.getElementById('ScriptOutput');

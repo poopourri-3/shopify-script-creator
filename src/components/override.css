@@ -1,0 +1,13 @@
+@media (min-width: 40em){
+  .Polaris-Subheading {
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+      text-transform: none;
+  }
+}
+.draggable:nth-child(odd) {
+    background: #eee;
+}
+.draggable{
+  border-radius: 0;
+}

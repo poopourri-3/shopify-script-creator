@@ -10,6 +10,7 @@ import App from './App';
 
 import '@shopify/polaris/styles.css';
 
+import './components/override.css';
 // Set up bugsnag to capture errors
 const bugsnagClient = bugsnag({
   apiKey: 'b5c7553f622953ed2e930932c74bd43d',

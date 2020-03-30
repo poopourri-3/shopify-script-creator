@@ -121,7 +121,7 @@ export default class App extends Component {
 
   typeChange(newType) {
     // Google Analytics
-    gtag('event', 'typeButtonClick');
+    //gtag('event', 'typeButtonClick');
 
     if (this.state.campaigns.length > 0 || this.state.showForm) {
       const response = confirm("Changing the script type will clear your current campaigns. Are you sure?");
@@ -129,7 +129,7 @@ export default class App extends Component {
     }
 
     // Google Analytics
-    gtag('event', 'typeChange');
+    //gtag('event', 'typeChange');
 
     const newState = JSON.parse(JSON.stringify(this.defaultState));
     newState.scriptType = newType;
@@ -139,12 +139,12 @@ export default class App extends Component {
 
   reset() {
     // Google Analytics
-    gtag('event', 'resetButtonClick');
+    //gtag('event', 'resetButtonClick');
 
     const response = confirm("Are you sure you want to clear your work and start over?");
     if (response) {
       // Google Analytics
-      gtag('event', 'reset')
+      //gtag('event', 'reset')
 
       this.setState(JSON.parse(JSON.stringify(this.defaultState)));
     }
@@ -179,7 +179,7 @@ export default class App extends Component {
 
   editCampaign(campaignId) {
     // Google Analytics
-    gtag('event', 'editButtonClick');
+    //gtag('event', 'editButtonClick');
 
     const newState = this.state;
     newState.showForm = true;
@@ -192,7 +192,7 @@ export default class App extends Component {
 
   duplicateCampaign(campaignId) {
     // Google Analytics
-    gtag('event', 'duplicateButtonClick');
+    //gtag('event', 'duplicateButtonClick');
 
     const campaign = JSON.parse(JSON.stringify(this.getCampaignById(campaignId)));
     campaign.id = null;
@@ -233,7 +233,7 @@ export default class App extends Component {
 
   removeCampaign(campaignId) {
     // Google Analytics
-    gtag('event', 'removeButtonClick');
+    //gtag('event', 'removeButtonClick');
 
     if (this.state.editCampaignInfo && this.state.editCampaignInfo.id === campaignId) {
       alert("You are currently editing this campaign. Save or discard changes first.");
@@ -244,7 +244,7 @@ export default class App extends Component {
     }
 
     // Google Analytics
-    gtag('event', 'removeCampaign');
+    //gtag('event', 'removeCampaign');
 
     const newState = this.state;
     const index = findIndexOf(this.state.campaigns, (campaign) => campaign.id === campaignId);
@@ -268,7 +268,7 @@ export default class App extends Component {
   addCampaign(campaign) {
     // Google Analytics
     const event = campaign.id ? 'editCampaign' : 'addCampaign';
-    gtag('event', event);
+    //gtag('event', event);
 
     const newState = this.state;
     if (campaign.id === null) {
@@ -292,7 +292,7 @@ export default class App extends Component {
 
   generateScript(minificationLevel = 0) {
     // Google Analytics
-    gtag('event', 'generateButtonClick');
+    //gtag('event', 'generateButtonClick');
 
     if (this.state.showForm) {
       alert("Save or discard changes to the current campaign first.");
@@ -460,7 +460,7 @@ ${INDENT[this.IL]})`;
 
   uploadFile() {
     // Google Analytics
-    gtag('event', 'importButtonClick');
+    //gtag('event', 'importButtonClick');
 
     if (!window.FileReader) {
       alert('Sorry, your browser does not support importing files.');
@@ -475,13 +475,13 @@ ${INDENT[this.IL]})`;
       document.body.appendChild(fileInput);
       fileInput.addEventListener('change', (evt) => {
         // Google Analytics
-        gtag('event', 'importAttempt');
+        //gtag('event', 'importAttempt');
 
         this.readFile(evt.target, (results) => {
           if (this.loadImportedData(results)) {
             this.prepareAndExportTo('localStorage');
             // Google Analytics
-            gtag('event', 'importSuccess');
+            //gtag('event', 'importSuccess');
           }
           document.body.removeChild(evt.target);
         });
@@ -576,7 +576,7 @@ ${INDENT[this.IL]})`;
     switch (exportType) {
       case "file":
         // Google Analytics
-        gtag('event', 'export');
+        //gtag('event', 'export');
         this.download(data, filename, 'text/plain');
         break;
       case 'localStorage':
