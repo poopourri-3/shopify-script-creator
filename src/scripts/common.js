@@ -79,6 +79,30 @@ class CartAmountQualifier < Qualifier
   end
 end`,
 
+  CartHasDiscountedItemQualifier: `
+class CartHasDiscountedItemQualifier < Qualifier
+  def initialize(quantity_or_subtotal, comparison_type, amount, item_selector)
+    @quantity_or_subtotal = quantity_or_subtotal
+    @comparison_type = comparison_type
+    @amount = quantity_or_subtotal == :subtotal ? Money.new(cents: amount * 100) : amount
+    @item_selector = item_selector
+  end
+
+  def match?(cart, selector = nil)
+    case @quantity_or_subtotal
+      when :quantity
+        total = cart.line_items.reduce(0) do |total, item|
+          total + (((item.discounted?) && @item_selector&.match?(item)) ? item.quantity : 0)
+        end
+      when :subtotal
+        total = cart.line_items.reduce(Money.zero) do |total, item|
+          total + (((item.discounted?) && @item_selector&.match?(item)) ? item.line_price : Money.zero)
+        end
+    end
+    compare_amounts(total, @comparison_type, @amount)
+  end
+end`,
+
   CartHasItemQualifier: `
 class CartHasItemQualifier < Qualifier
   def initialize(quantity_or_subtotal, comparison_type, amount, item_selector)
@@ -104,7 +128,7 @@ class CartHasItemQualifier < Qualifier
 end`,
 
   CartHasNoItemQualifier: `
-class CartHasItemQualifier < Qualifier
+class CartHasNoItemQualifier < Qualifier
   def initialize(quantity_or_subtotal, comparison_type, amount, item_selector)
     @quantity_or_subtotal = quantity_or_subtotal
     @comparison_type = comparison_type
@@ -1237,6 +1261,53 @@ const cartQualifiers = [{
   {
     value: "CartHasItemQualifier",
     label: "Cart Has Items",
+    description: "Qualifies if the items in the cart match the given conditions",
+    newLineEachInput: true,
+    inputs: {
+      quantity_or_subtotal: {
+        type: "select",
+        description: "Total quantity of items or subtotal of items",
+        options: [{
+            value: "quantity",
+            label: "Item quantity"
+          },
+          {
+            value: "subtotal",
+            label: "Item subtotal"
+          },
+        ]
+      },
+      match_condition: {
+        type: "select",
+        description: "Type of comparison",
+        options: [{
+            value: "greater_than",
+            label: "Greater than"
+          },
+          {
+            value: "less_than",
+            label: "Less than"
+          },
+          {
+            value: "greater_than_or_equal",
+            label: "Greater than or equal to"
+          },
+          {
+            value: "less_than_or_equal",
+            label: "Less than or equal to"
+          },
+        ]
+      },
+      amount: {
+        type: "number",
+        description: "Quantity or subtotal of items"
+      },
+      item_selector: lineItemSelectors,
+    }
+  },
+  {
+    value: "CartHasDiscountedItemQualifier",
+    label: "Cart Has Discounted Items",
     description: "Qualifies if the items in the cart match the given conditions",
     newLineEachInput: true,
     inputs: {
